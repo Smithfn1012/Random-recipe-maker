@@ -87,3 +87,8 @@ class Recipes {
         }
     }
 
+    toggleForm() {
+        const form = this.formSubmit.parentElement;
+        this.hideOrShowElement(form);
+    }
+
