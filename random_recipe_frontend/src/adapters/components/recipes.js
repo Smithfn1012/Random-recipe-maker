@@ -106,3 +106,9 @@ class Recipes {
         this.cardContainer.innerHTML = "";
     }    
 
+    getAndLoadRandomRecipeByIngredient() {
+        this.clearRecipes();
+        const ingredient = event.target.value
+        this.adapter.getRecipeByIngredient(ingredient).then(json => this.loadRandomRecipe(json.data.attributes))
+    }
+
