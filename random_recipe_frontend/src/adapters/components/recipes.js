@@ -16,4 +16,21 @@ class Recipes {
         this.adapter.getRecipes().then(recipes => this.createRecipes(recipes)).then(() => this.addRecipesToDom())
     }
 
-    
+    bindEventListeners() {
+        this.formSubmit.addEventListener("click", function() {
+          event.preventDefault();
+          this.addRecipe();
+        }.bind(this))
+        this.addRecipeButton.addEventListener("click", function() {
+          this.toggleForm();
+          this.toggleButtons();
+        }.bind(this))
+        this.dropDownButton.addEventListener("click", function() {
+          this.toggleDropDown();
+          this.toggleButtons();
+        }.bind(this))
+        this.ingredientDropDown.addEventListener("change", function() {
+          this.getAndLoadRandomRecipeByIngredient();
+        }.bind(this))
+    }
+
