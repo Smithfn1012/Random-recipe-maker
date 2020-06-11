@@ -11,3 +11,9 @@ class Recipes {
       this.bindEventListeners();
       this.fetchAndLoadRecipes();
     }
+
+    fetchAndLoadRecipes() {
+        this.adapter.getRecipes().then(recipes => this.createRecipes(recipes)).then(() => this.addRecipesToDom())
+    }
+
+    
