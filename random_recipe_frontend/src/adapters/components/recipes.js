@@ -92,3 +92,13 @@ class Recipes {
         this.hideOrShowElement(form);
     }
 
+    toggleButtons() {
+        this.hideOrShowElement(this.formButtons);
+    }
+
+    toggleDropDown() {
+        const dropDown = document.getElementById("filter-drop-down");
+        this.hideOrShowElement(dropDown);
+        new Ingredients();
+    }
+
