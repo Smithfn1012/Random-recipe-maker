@@ -112,3 +112,10 @@ class Recipes {
         this.adapter.getRecipeByIngredient(ingredient).then(json => this.loadRandomRecipe(json.data.attributes))
     }
 
+    loadRandomRecipe(recipe) {
+        let ingredients = this.createArrayOfRecipeIngredients(recipe.ingredients)
+        const r = new Recipe(recipe.title, recipe.image_link, recipe.recipe_link, ingredients)
+        r.createRecipeCard();
+    }
+}
+
