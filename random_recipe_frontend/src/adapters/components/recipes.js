@@ -34,3 +34,11 @@ class Recipes {
         }.bind(this))
     }
 
+    createArrayOfRecipeIngredients(ingredients) {
+        let ingredientArray = [];
+        for (let ingredient of ingredients) {
+          ingredientArray.push(ingredient.name);
+        }
+        return ingredientArray
+    }
+
