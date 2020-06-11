@@ -102,3 +102,7 @@ class Recipes {
         new Ingredients();
     }
 
+    clearRecipes() {
+        this.cardContainer.innerHTML = "";
+    }    
+
