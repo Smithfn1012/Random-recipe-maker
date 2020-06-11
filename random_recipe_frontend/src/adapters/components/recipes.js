@@ -79,3 +79,11 @@ class Recipes {
         }.bind(this))
     }    
 
+    hideOrShowElement(element) {
+        if (element.classList.contains("hidden")) {
+          element.classList.remove("hidden");
+        } else {
+          element.className += " hidden";
+        }
+    }
+
