@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
     end
   
     def show
-      recipes = Ingredient.find_by(name: params[:ingredient_name]).recipes
+      recipes = Ingredient.find_by(params[:name]).recipes
   
       render json: RecipeSerializer.new(recipes.sample)
     end
@@ -26,4 +26,3 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:title, :recipe_link, :image_link)
     end
 end
-  
